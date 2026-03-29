@@ -3,29 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js"></script>
+    <title>Post & Comment Management</title>
 </head>
+
 <body>
+    <h2>📌 Danh sách Posts</h2>
+
     <div>
-        <table>
+        <table border="1" cellpadding="10">
             <thead>
                 <tr>
-                    <th>id</td>
-                    <th>title</td>
-                    <th>views</td>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>views</th>
+                    <th>action</th>
                 </tr>
             </thead>
-            <tbody id="table-body">
-
-            </tbody>
+            <tbody id="table-body"></tbody>
         </table>
     </div>
+
+    <br>
+
     <div>
-        <input type="text" id="id_txt"/>
-        <input type="text" id="title_txt"/>
-        <input type="text" id="views_txt"/>
-        <input type="submit" value="Save" onclick="Save()"/>
+        <h3>➕ Thêm / Sửa Post</h3>
+        <input type="text" id="id_txt" placeholder="ID (để trống nếu tạo mới)" />
+        <input type="text" id="title_txt" placeholder="Title" />
+        <input type="text" id="views_txt" placeholder="Views" />
+        <input type="submit" value="Save" onclick="Save()" />
     </div>
+
+    <hr>
+
+    <!-- ================= COMMENT ================= -->
+    <div>
+        <h2>💬 Quản lý Comments</h2>
+
+        <input type="text" id="comment_txt" placeholder="Nhập comment..." />
+        <input type="text" id="postId_txt" placeholder="Post ID" />
+
+        <button onclick="AddComment()">Add Comment</button>
+
+        <div id="comment-list"></div>
+    </div>
+
+    <!-- LOAD JS -->
+    <script src="main.js"></script>
 </body>
 </html>
